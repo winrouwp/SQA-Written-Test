@@ -1,0 +1,345 @@
+{
+  "info": {
+    "_postman_id": "0e334ee5-32ba-4391-bbba-2259b1b550a1",
+    "name": "RestCountries",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41347437"
+  },
+  "item": [
+    {
+      "name": "Show all country",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "rc_live_a0353b2f1db14fa0a8a37cc0f6e7489a",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Only 1 Country",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?names.common=Indonesia",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "names.common",
+              "value": "Indonesia"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Case Insensitive",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?names.common=IndonESIA",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "names.common",
+              "value": "IndonESIA"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Multi Word",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?names.common=American Samoan",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "names.common",
+              "value": "American Samoan"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Country Name by Partial Keyword",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?names.common=ger",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "names.common",
+              "value": "ger"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search Official Name(example Republic)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?names.official=Republic",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "names.official",
+              "value": "Republic"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Empty Query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?q=",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Not match searching",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?q=testabcd",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "testabcd"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Special characters",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?q=C@nada",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "C@nada"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "response_fields",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?response_fields=names.common,names.official",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "response_fields",
+              "value": "names.common,names.official"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "response_fields_omit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.restcountries.com/countries/v5?response_fields_omit=names.common,names.official",
+          "protocol": "https",
+          "host": [
+            "api",
+            "restcountries",
+            "com"
+          ],
+          "path": [
+            "countries",
+            "v5"
+          ],
+          "query": [
+            {
+              "key": "response_fields_omit",
+              "value": "names.common,names.official"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "rc_live_a0353b2f1db14fa0a8a37cc0f6e7489a",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
